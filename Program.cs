@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace HelloWorld {
   class Program {
 
     static void Main(string[] args) {
       //------------Variables---------------
-      Boolean playAgain = true;
+      /*Boolean playAgain = true;
       int nrOfGuess;
       int randomNum;
       int userGuess = 0;
       String userVal;
       List<int> scores = new List<int>();
       //-------------------------------------
+      */
+      GuessNumber newGame = new GuessNumber();
+      UI ui = new UI();
 
-      Console.Write("------------------------------");
-      Console.Write("\nWELCOME TO THE GUESSING GAME!!\n");
-      Console.Write("------------------------------");
-      
+      String playOption = ui.drawUI();
+      newGame.playGame(playOption);
+      /*
+
       //game loop run until user decide to quit
       do {
         Random random = new Random();
@@ -60,6 +64,7 @@ namespace HelloWorld {
       foreach (int score in scores) {
         Console.Write(score + ", ");
       }
+    }*/
     }
   }
 }
